@@ -3,15 +3,36 @@ backend:
   turbo_site_id: 0b6b35dc-5e0c-4900-95f0-990e1df55bdf
   branch: main
 
-media_folder: "static/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 collections:
   - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+    label: "Berita & Artikel"
+    folder: "_blog"
     create: true
+    slug: "{{slug}}"
+    preview_path: "berita/{{slug}}/"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Judul", name: "title", widget: "string"}
+      - label: "Jenis konten"
+        name: "category"
+        widget: "select"
+        options: ["Berita", "Artikel", "Pengumuman"]
+        default: "Berita"
+      - {label: "Tanggal terbit", name: "date", widget: "datetime"}
+      - {label: "Gambar sampul", name: "image", widget: "image"}
+      - {label: "Deskripsi gambar", name: "image_alt", widget: "string"}
+      - {label: "Ringkasan", name: "excerpt", widget: "text"}
+      - {label: "Isi tulisan", name: "body", widget: "markdown"}
+
+  - name: "galeri"
+    label: "Galeri Foto"
+    folder: "_galeri"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Keterangan foto", name: "title", widget: "string"}
+      - {label: "Foto", name: "image", widget: "image"}
+      - {label: "Deskripsi gambar", name: "image_alt", widget: "string"}
+      - {label: "Tanggal kegiatan", name: "date", widget: "datetime", required: false}

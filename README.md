@@ -27,3 +27,5 @@ The CMS is available at <https://daarulazmi.ponpes.id/admin/> and uses Decap Tur
 The `turbo_site_id` is configured in `admin/config.yml`. In the Decap Turbo dashboard, connect the site to this GitHub repository and `main` branch, and add <https://daarulazmi.ponpes.id/admin/> under **Admin interface URLs**. Give CMS access to each editor in Turbo. Authentication requires the Turbo site and GitHub connection to be set up in the dashboard.
 
 See the [Decap Turbo guide](https://decapcms.org/docs/turbo-connecting-a-site/) for setup details. Do not add OAuth client secrets to this repository.
+
+The CMS includes **Berita & Artikel** and **Galeri Foto** collections. News and articles support a category, publication date, cover image, summary, and Markdown body; photo entries support an uploaded image and caption. New uploads are stored under `assets/uploads/`. Published entries appear on the homepage, and news articles also have their own page under `/berita/`.

@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="id">
   <head>
@@ -55,8 +57,8 @@
               <a href="source-site/sarana.html">Sarana &amp; Prasarana</a>
             </div>
           </details>
-          <a href="source-site/berita.html">Berita</a>
-          <a href="source-site/gallery.html">Gallery</a>
+          <a href="berita.html">Berita</a>
+          <a href="galeri.html">Galeri</a>
           <a href="source-site/youtube.html">Video</a>
           <a href="source-site/kontak.html">Kontak</a>
           <a class="nav-brochure" href="source-site/brosur.html">Brosur</a>
@@ -189,33 +191,23 @@
             <p class="eyebrow">Warta &amp; kabar</p>
             <h2>Info <span>terbaru</span></h2>
           </div>
-          <a class="text-link" href="source-site/berita.html">Lihat semua berita <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="berita.html">Lihat semua berita <span aria-hidden="true">→</span></a>
         </div>
         <div class="news-grid">
-          <article class="news-card">
-            <a href="source-site/berita.html" aria-label="Berita: Peluncuran Kitab Karya Ilmiah Santri">
-              <img src="assets/news/karya-santri.jpg" alt="Peluncuran kitab karya ilmiah santri" loading="lazy">
-            </a>
-            <div class="news-copy"><time datetime="2026-06-22">22 June 2026</time><h3>Peluncuran Kitab Karya Ilmiah Santri Ponpes Daarul Azmi, Bukti Tradisi Literasi dan Keilmuan Pesantren</h3><p>Gunungsindur, Bogor – Pondok Pesantren Daarul Azmi kembali menorehkan prestasi dalam bidang pendidikan dan literasi melalui kegiatan...</p><a class="text-link" href="source-site/berita.html">Baca selengkapnya <span aria-hidden="true">→</span></a></div>
-          </article>
-          <article class="news-card">
-            <a href="source-site/berita.html" aria-label="Berita: Santriwati kelas 2 SMP hatam Alfiyah">
-              <img src="assets/news/alfiyah.jpg" alt="Santriwati Daarul Azmi mengkhatamkan Alfiyah" loading="lazy">
-            </a>
-            <div class="news-copy"><time datetime="2026-02-11">11 February 2026</time><h3>Santriwati kelas 2 SMP hatam alfiyah 500 bait level mutqin</h3><p>Hilwah Nafiza, santriwati berusia 13 tahun yang kini duduk di kelas VIII SMP Islam Daarul Azmi, kembali menorehkan prestasi...</p><a class="text-link" href="source-site/berita.html">Selengkapnya <span aria-hidden="true">→</span></a></div>
-          </article>
-          <article class="news-card">
-            <a href="source-site/berita.html" aria-label="Berita: Prestasi di ajang MQK Se-Jabodetabek">
-              <img src="assets/news/mqk.jpg" alt="Santri Daarul Azmi meraih prestasi di ajang MQK" loading="lazy">
-            </a>
-            <div class="news-copy"><time datetime="2026-02-10">10 February 2026</time><h3>Pesantren Darul Azmi Gunung Sindur Raih Prestasi di Ajang MQK Se-Jabodetabek</h3><p>Pondok Pesantren Darul Azmi Gunung Sindur kembali menorehkan prestasi membanggakan dalam ajang Musabaqah Qiraatil Kutub...</p><a class="text-link" href="source-site/berita.html">Selengkapnya <span aria-hidden="true">→</span></a></div>
-          </article>
-          <article class="news-card">
-            <a href="source-site/berita.html" aria-label="Berita: Santri hafal Al-Qur'an 30 juz dalam 55 hari">
-              <img src="assets/news/hafiz-30-juz.jpg" alt="Santri Daarul Azmi menghafal 30 juz Al-Qur'an" loading="lazy">
-            </a>
-            <div class="news-copy"><time datetime="2026-02-09">9 February 2026</time><h3>Persembahkan MAHKOTA untuk Ibu, Santri Usia 13 tahun jadi Hafiz Alquran 30 juz dihatamkan dalam 55 hari</h3><p>Hafizurahman ElMubarok tercatat sebagai santri SMP Islam Daarul Azmi kelas VII...</p><a class="text-link" href="source-site/berita.html">Selengkapnya <span aria-hidden="true">→</span></a></div>
-          </article>
+          {% assign latest_news = site.blog | sort: "date" | reverse %}
+          {% for entry in latest_news limit: 4 %}
+            <article class="news-card">
+              <a href="{{ entry.url | relative_url }}" aria-label="{{ entry.title | escape }}">
+                <img src="{{ entry.image | relative_url }}" alt="{{ entry.image_alt | default: entry.title | escape }}" loading="lazy">
+              </a>
+              <div class="news-copy">
+                <time datetime="{{ entry.date | date: '%Y-%m-%d' }}">{{ entry.date | date: "%d-%m-%Y" }}</time>
+                <h3>{{ entry.title | escape }}</h3>
+                <p>{{ entry.excerpt | escape }}</p>
+                <a class="text-link" href="{{ entry.url | relative_url }}">Baca selengkapnya <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          {% endfor %}
         </div>
       </section>
 
@@ -223,13 +215,16 @@
         <div class="section-wrap">
           <div class="section-title-row">
             <div class="section-heading"><p class="eyebrow">Momen kebersamaan</p><h2>Foto <span>kegiatan</span></h2></div>
-            <a class="text-link" href="source-site/gallery.html">Foto lainnya <span aria-hidden="true">→</span></a>
+            <a class="text-link" href="galeri.html">Foto lainnya <span aria-hidden="true">→</span></a>
           </div>
           <div class="gallery-grid">
-            <figure><img src="assets/gallery/olahraga.jpg" alt="Olah raga pagi" loading="lazy"><figcaption>Olah raga pagi</figcaption></figure>
-            <figure><img src="assets/gallery/kelas.jpg" alt="Kelas formal" loading="lazy"><figcaption>Kelas formal</figcaption></figure>
-            <figure><img src="assets/gallery/quran.jpg" alt="Qiroat Quran" loading="lazy"><figcaption>Qiroat Quran</figcaption></figure>
-            <figure><img src="assets/gallery/komputer.jpg" alt="Praktikum komputer" loading="lazy"><figcaption>Praktikum komputer</figcaption></figure>
+            {% assign latest_photos = site.galeri | sort: "title" %}
+            {% for photo in latest_photos limit: 4 %}
+              <figure>
+                <img src="{{ photo.image | relative_url }}" alt="{{ photo.image_alt | default: photo.title | escape }}" loading="lazy">
+                <figcaption>{{ photo.title | escape }}</figcaption>
+              </figure>
+            {% endfor %}
           </div>
         </div>
       </section>

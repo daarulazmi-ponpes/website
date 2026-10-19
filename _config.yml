@@ -1,0 +1,13 @@
+collections:
+  blog:
+    output: true
+    permalink: /berita/:name/
+  galeri:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: blog
+    values:
+      layout: post

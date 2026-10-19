@@ -1,0 +1,45 @@
+---
+layout: null
+title: Galeri Foto
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | Pondok Pesantren Daarul Azmi</title>
+    <link rel="icon" href="{{ '/assets/icons/logoDA.png' | relative_url }}" type="image/png">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="Daarul Azmi, beranda">
+          <img src="{{ '/assets/icons/Header.png' | relative_url }}" alt="Pondok Pesantren Daarul Azmi">
+        </a>
+        <nav class="primary-nav" aria-label="Navigasi utama">
+          <a href="{{ '/' | relative_url }}">Beranda</a>
+          <a href="{{ '/berita.html' | relative_url }}">Berita</a>
+          <a href="{{ '/galeri.html' | relative_url }}">Galeri</a>
+        </nav>
+      </div>
+    </header>
+    <main class="gallery-section">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <p class="eyebrow">Momen kebersamaan</p>
+          <h1>Galeri Foto</h1>
+        </div>
+        <div class="gallery-grid">
+          {% assign photos = site.galeri | sort: "title" %}
+          {% for photo in photos %}
+            <figure>
+              <img src="{{ photo.image | relative_url }}" alt="{{ photo.image_alt | default: photo.title | escape }}" loading="lazy">
+              <figcaption>{{ photo.title | escape }}</figcaption>
+            </figure>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
