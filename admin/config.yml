@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: daarulazmi-ponpes/website
+  name: git-gateway
   branch: main
-  site_domain: heartfelt-baklava-006ca7.netlify.app
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
