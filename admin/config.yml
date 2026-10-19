@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: daarulazmi-ponpes/website
-  branch: main # Ganti dengan 'master' jika branch utama repository Anda bernama master
+  branch: main # Ganti dengan 'master' jika branch utama Anda master
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
