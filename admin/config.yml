@@ -1,9 +1,9 @@
 backend:
   name: turbo-github
   turbo_site_id: 0b6b35dc-5e0c-4900-95f0-990e1df55bdf
-  branch: main
+  branch: turbo
 
-media_folder: "images/uploads"
+media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
