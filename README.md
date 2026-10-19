@@ -22,6 +22,10 @@ Open <https://heartfelt-baklava-006ca7.netlify.app/admin/> to use Decap CMS. The
 
 CMS access requires an Identity account for this Netlify project. Manage users and invitations in the project's Netlify Identity settings. Identity and Git Gateway must both stay enabled in the Netlify project configuration. A local static server or GitHub Pages does not provide these services itself.
 
+If login reports `Email not confirmed`, open the confirmation email from Netlify Identity and follow its link before logging in again. Check the spam folder as well. Homepage links containing confirmation, invitation, recovery, or email-change callbacks are forwarded to the Netlify admin page for processing. If the confirmation link has expired or never arrived, use the Identity user's confirmation resend action in the Netlify dashboard when available. Keep email confirmation enabled.
+
+Changes must be published on each hosting service that serves these pages. Deploying to Netlify does not update GitHub Pages. If the custom domain still shows the old login page, publish the updated `admin/index.html` and homepage through GitHub Pages, or access the Netlify admin address directly.
+
 ## Publish with GitHub Pages
 
 In the repository's **Settings → Pages**, select **Deploy from a branch**, choose `main` and the `/ (root)` folder, then save.
