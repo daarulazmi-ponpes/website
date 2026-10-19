@@ -18,7 +18,7 @@ The mirrored pages are available under <http://localhost:8000/source-site/>.
 
 ## Content manager
 
-Open <https://heartfelt-baklava-006ca7.netlify.app/admin/> to use Decap CMS. Its Git Gateway backend uses the production site's Netlify Identity and Git Gateway services, including when the CMS is opened from a preview or another hosting address.
+Open <https://heartfelt-baklava-006ca7.netlify.app/admin/> to use Decap CMS. The admin page redirects visitors from other hosting addresses, including `https://daarulazmi.ponpes.id/admin/`, to this address so the login component and Git Gateway both use the production site's Netlify services. Invitation and password recovery links keep their callback information during the redirect.
 
 CMS access requires an Identity account for this Netlify project. Manage users and invitations in the project's Netlify Identity settings. Identity and Git Gateway must both stay enabled in the Netlify project configuration. A local static server or GitHub Pages does not provide these services itself.
 

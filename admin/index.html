@@ -4,9 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
+  <script>
+    // Identity is hosted on Netlify, including for visitors from other hosts.
+    if (window.location.origin !== "https://heartfelt-baklava-006ca7.netlify.app") {
+      window.location.replace(
+        "https://heartfelt-baklava-006ca7.netlify.app/admin/" +
+        window.location.search + window.location.hash
+      );
+    }
+  </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <noscript>
+    Aktifkan JavaScript dan buka
+    <a href="https://heartfelt-baklava-006ca7.netlify.app/admin/">halaman admin Netlify</a>
+    untuk mengelola konten.
+  </noscript>
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
