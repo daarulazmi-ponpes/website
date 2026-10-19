@@ -1,5 +1,6 @@
 backend:
-  name: github
+  backend:
+  name: git-gateway
   repo: daarulazmi-ponpes/website
   branch: main
 
