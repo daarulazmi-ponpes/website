@@ -1,6 +1,8 @@
 # Pondok Pesantren Daarul Azmi
 
-Static homepage containing the published information and media from [ponpesdaarulazmi.org](https://ponpesdaarulazmi.org/). The main page and its images are included in this repository; navigation to detailed profile, news, gallery, video, and contact pages remains linked to the official website.
+Static website for Pondok Pesantren Daarul Azmi. The redesigned homepage is in `index.html`; pages and assets reachable on the official website when mirrored are included in `source-site/`. Links from the homepage to profile, news, gallery, video, and contact pages open their local copies.
+
+The mirror is static: search and contact forms still rely on the official website's backend, while social media, maps, video embeds, and third-party libraries continue to use their external services. WhatsApp contact links use **+62 888 0100 5284**.
 
 ## Preview locally
 
@@ -11,6 +13,8 @@ python3 -m http.server 8000
 ```
 
 Then visit <http://localhost:8000>.
+
+The mirrored pages are available under <http://localhost:8000/source-site/>.
 
 ## Publish with GitHub Pages
 
