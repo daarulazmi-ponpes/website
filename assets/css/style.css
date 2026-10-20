@@ -390,21 +390,5 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   color: var(--navy-deep);
   background: rgb(255 255 255 / 82%);
 }
-
-.hero { aspect-ratio: auto; min-height: 600px; height: min(720px, 78vw); max-height: 82vh; }
-.hero-slide,
-.hero-slide.is-active { object-fit: cover; transform: scale(1); }
-.hero-shade { background: linear-gradient(90deg, rgb(5 40 34 / 88%), rgb(8 54 45 / 67%) 55%, rgb(8 54 45 / 24%)); }
-.hero-content h1 { max-width: 800px; }
-.hero-content > p:not(.eyebrow) strong { color: #fff; }
-.hero-content .button { margin-top: 2px; }
-
-@media (max-width: 640px) {
-  .hero { min-height: 570px; height: 76vh; max-height: 740px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-slide { transition: none; }
-}
 .slide-dot { background: rgb(7 55 47 / 35%); }
 .slide-dot.is-active { background: #13a77f; }
