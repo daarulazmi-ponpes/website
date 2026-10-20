@@ -159,6 +159,15 @@ button { font: inherit; }
 .footer-bottom p { margin: 0; }
 .floating-contact { position: fixed; right: 22px; bottom: 20px; z-index: 10; display: flex; align-items: center; gap: 10px; padding: 12px 17px; color: white; background: #19744c; border-radius: 30px; box-shadow: 0 8px 25px #102c4630; font-size: 12px; font-weight: 700; }
 .floating-contact:hover { background: #125f3d; }
+.floating-ppdb { position: fixed; right: 22px; bottom: 78px; z-index: 11; display: grid; gap: 2px; min-width: 205px; padding: 13px 18px 14px; color: #07372f; background: linear-gradient(135deg, #fff8e8, #ffcf70); border: 1px solid #e2ae4b; border-radius: 18px; box-shadow: 0 8px 24px #062c2638; animation: ppdb-attention 3s ease-in-out infinite; }
+.floating-ppdb:hover { color: #07372f; background: linear-gradient(135deg, #fffdf5, #ffd985); animation-play-state: paused; transform: translateY(-2px); }
+.floating-ppdb-badge { color: #84601c; font-size: 9px; font-weight: 800; letter-spacing: .13em; }
+.floating-ppdb-title { font-size: 14px; font-weight: 800; }
+.floating-ppdb-note { display: flex; align-items: center; justify-content: space-between; color: #70521c; font-size: 11px; font-weight: 700; }
+@keyframes ppdb-attention {
+  0%, 100% { box-shadow: 0 8px 24px #062c2638; }
+  50% { box-shadow: 0 8px 28px #d4942766; }
+}
 
 @media (max-width: 1050px) {
   .primary-nav { gap: 13px; font-size: 12px; }
@@ -361,6 +370,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .hero { min-height: 550px; }
   .hero-content { width: calc(100% - 36px); }
   .floating-contact { right: 14px; bottom: 14px; }
+  .floating-ppdb { right: 14px; bottom: 72px; min-width: 190px; padding: 11px 15px 12px; }
 }
 
 .hero {
