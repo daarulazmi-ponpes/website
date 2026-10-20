@@ -1,5 +1,13 @@
 const registrationForm = document.querySelector(".registration-form");
 const formStatus = document.querySelector(".form-status");
+const ticker = document.querySelector(".ticker-bar");
+const tickerToggle = document.querySelector(".ticker-toggle");
+
+tickerToggle.addEventListener("click", () => {
+  const isPaused = ticker.classList.toggle("is-paused");
+  tickerToggle.setAttribute("aria-pressed", String(isPaused));
+  tickerToggle.textContent = isPaused ? "Lanjutkan pengumuman berjalan" : "Jeda pengumuman berjalan";
+});
 
 registrationForm.addEventListener("submit", (event) => {
   event.preventDefault();

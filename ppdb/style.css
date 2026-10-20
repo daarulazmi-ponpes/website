@@ -27,9 +27,34 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .wrap { width: min(1080px, calc(100% - 36px)); margin-inline: auto; }
 
+.ticker-bar { background: var(--green); color: #fff; font-size: 12px; }
+.ticker-inner { min-height: 36px; display: flex; align-items: center; gap: 14px; }
+.ticker-viewport { min-width: 0; flex: 1; overflow: hidden; }
+.ticker-track { display: flex; width: max-content; }
+.ticker-copy { display: flex; flex: 0 0 auto; align-items: center; gap: 24px; padding-inline: 18px; white-space: nowrap; }
+.ticker-separator { color: #f4d985; font-size: 10px; }
+.ticker-toggle { padding: 4px 8px; color: #fff; background: transparent; border: 1px solid #ffffff80; border-radius: 5px; font: inherit; font-size: 10px; cursor: pointer; }
+.ticker-toggle:hover { background: #ffffff1a; }
+.ticker-bar.is-paused .ticker-track { animation-play-state: paused; }
 .announcement { background: var(--deep); color: #eaf3ed; font-size: 12px; }
 .announcement-inner { min-height: 37px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .announcement a { color: #f4d985; }
+@media (prefers-reduced-motion: no-preference) {
+  .ticker-track { animation: announcement-scroll 32s linear infinite; }
+  .ticker-viewport:hover .ticker-track,
+  .ticker-viewport:focus-within .ticker-track { animation-play-state: paused; }
+}
+@keyframes announcement-scroll {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-inner { align-items: flex-start; flex-direction: column; gap: 4px; padding-block: 8px; }
+  .ticker-viewport { width: 100%; overflow: visible; }
+  .ticker-track { width: auto; flex-wrap: wrap; gap: 3px 18px; }
+  .ticker-copy { display: contents; padding: 0; white-space: normal; }
+  .ticker-copy + .ticker-copy { display: none; }
+  .ticker-toggle { display: none; }
+}
 .site-header { position: relative; z-index: 2; background: #fff; border-bottom: 1px solid var(--line); }
 .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
 .brand, .footer-brand { display: inline-flex; align-items: center; gap: 11px; }
