@@ -4,6 +4,8 @@ Static website for Pondok Pesantren Daarul Azmi. The redesigned homepage is in `
 
 The mirror is static: search and contact forms still rely on the official website's backend, while social media, maps, video embeds, and third-party libraries continue to use their external services. WhatsApp contact links use **+62 888 0100 5284**.
 
+The PPDB account-request page is available at `/ppdb/`. This GitHub Pages site has no server-side form or email service configured, so submitting the form opens the visitor's email application with a message addressed to **admin@daarulazmi.ponpes.id**; the visitor must send it there. No account is created automatically, and the page never confirms that an email was delivered. A reliable automated workflow requires a trusted server-side endpoint and credentials configured outside this static repository. The repository's `CNAME` serves `daarulazmi.ponpes.id`; deploying this page on `ppdb.daarulazmi.ponpes.id` also requires that subdomain to be configured for a deployment that serves this repository.
+
 ## Preview locally
 
 Run a local static file server from the repository root:
