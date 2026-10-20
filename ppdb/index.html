@@ -98,31 +98,78 @@
           <form class="registration-form" action="mailto:admin@daarulazmi.ponpes.id" method="post" enctype="text/plain">
             <div class="form-heading">
               <span class="form-step">FORMULIR PPDB · 2027/2028</span>
-              <h3>Data calon akun</h3>
+              <h3>Data pendaftaran santri</h3>
               <p>Kolom bertanda <span aria-hidden="true">*</span> wajib diisi.</p>
             </div>
-            <div class="field">
-              <label for="student-name">Nama lengkap calon santri <span aria-hidden="true">*</span></label>
-              <input id="student-name" name="Nama calon santri" autocomplete="name" maxlength="100" required>
-            </div>
-            <div class="field">
-              <label for="guardian-name">Nama orang tua/wali <span aria-hidden="true">*</span></label>
-              <input id="guardian-name" name="Nama orang tua/wali" autocomplete="family-name" maxlength="100" required>
-            </div>
-            <div class="field">
-              <label for="account-email">Email untuk akun PPDB <span aria-hidden="true">*</span></label>
-              <input id="account-email" name="Email untuk akun" type="email" autocomplete="email" maxlength="254" required>
-            </div>
-            <div class="field-row">
+            <fieldset class="applicant-details">
+              <legend>Data calon santri</legend>
               <div class="field">
-                <label for="guardian-phone">Nomor WhatsApp orang tua/wali <span aria-hidden="true">*</span></label>
-                <input id="guardian-phone" name="WhatsApp orang tua/wali" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" required>
+                <label for="student-name">Nama lengkap calon santri <span aria-hidden="true">*</span></label>
+                <input id="student-name" name="Nama calon santri" autocomplete="name" maxlength="100" required>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="birth-place">Tempat lahir <span aria-hidden="true">*</span></label>
+                  <input id="birth-place" name="Tempat lahir" autocomplete="off" maxlength="100" required>
+                </div>
+                <div class="field">
+                  <label for="birth-date">Tanggal lahir <span aria-hidden="true">*</span></label>
+                  <input id="birth-date" name="Tanggal lahir" type="date" autocomplete="bday" required>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="gender">Jenis kelamin <span aria-hidden="true">*</span></label>
+                  <select id="gender" name="Jenis kelamin" required>
+                    <option value="">Pilih jenis kelamin</option>
+                    <option>Laki-laki</option>
+                    <option>Perempuan</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="education-level">Jenjang yang diminati <span aria-hidden="true">*</span></label>
+                  <input id="education-level" name="Jenjang yang diminati" maxlength="60" placeholder="Contoh: SMP atau MA" required>
+                </div>
               </div>
               <div class="field">
-                <label for="education-level">Jenjang yang diminati <span aria-hidden="true">*</span></label>
-                <input id="education-level" name="Jenjang yang diminati" maxlength="60" placeholder="Contoh: SMP atau MA" required>
+                <label for="previous-school">Asal sekolah <span aria-hidden="true">*</span></label>
+                <input id="previous-school" name="Asal sekolah" autocomplete="organization" maxlength="150" required>
               </div>
-            </div>
+              <div class="field">
+                <label for="student-address">Alamat lengkap calon santri <span aria-hidden="true">*</span></label>
+                <textarea id="student-address" name="Alamat calon santri" autocomplete="street-address" rows="2" maxlength="300" required></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="applicant-details">
+              <legend>Data orang tua/wali</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label for="guardian-name">Nama orang tua/wali <span aria-hidden="true">*</span></label>
+                  <input id="guardian-name" name="Nama orang tua/wali" autocomplete="family-name" maxlength="100" required>
+                </div>
+                <div class="field">
+                  <label for="guardian-relationship">Hubungan dengan calon santri <span aria-hidden="true">*</span></label>
+                  <input id="guardian-relationship" name="Hubungan wali dengan calon santri" maxlength="50" placeholder="Contoh: Ayah atau Ibu" required>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="guardian-phone">Nomor WhatsApp orang tua/wali <span aria-hidden="true">*</span></label>
+                  <input id="guardian-phone" name="WhatsApp orang tua/wali" type="tel" autocomplete="tel" inputmode="tel" maxlength="30" required>
+                </div>
+                <div class="field">
+                  <label for="account-email">Email aktif untuk pendaftaran <span aria-hidden="true">*</span></label>
+                  <input id="account-email" name="Email aktif pendaftar" type="email" autocomplete="email" maxlength="254" required>
+                </div>
+              </div>
+              <div class="field">
+                <label for="guardian-occupation">Pekerjaan orang tua/wali <span class="optional-label">(opsional)</span></label>
+                <input id="guardian-occupation" name="Pekerjaan orang tua/wali" autocomplete="organization-title" maxlength="100">
+              </div>
+            </fieldset>
+
+            <p class="field-hint">Tahun ajaran pendaftaran: <strong>2027/2028</strong></p>
             <fieldset class="document-status">
               <legend>Status persyaratan berkas</legend>
               <p>Pilih status setiap berkas. Formulir ini hanya mencatat status dan tidak mengunggah atau melampirkan dokumen.</p>
