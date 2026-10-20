@@ -6,17 +6,31 @@ registrationForm.addEventListener("submit", (event) => {
 
   const formData = new FormData(registrationForm);
   const emailBody = [
-    "Permintaan akun PPDB Daarul Azmi 2027/2028",
+    "PERMINTAAN PENDAFTARAN AKUN PPDB PONDOK PESANTREN DAARUL AZMI",
+    "Tahun ajaran: 2027/2028",
     "",
+    "DATA PENDAFTAR",
     `Nama calon santri: ${formData.get("Nama calon santri")}`,
-    `Email untuk akun: ${formData.get("Email untuk akun")}`,
+    `Nama orang tua/wali: ${formData.get("Nama orang tua/wali")}`,
+    `Email untuk akun PPDB: ${formData.get("Email untuk akun")}`,
     `WhatsApp orang tua/wali: ${formData.get("WhatsApp orang tua/wali")}`,
     `Jenjang yang diminati: ${formData.get("Jenjang yang diminati")}`,
     "",
-    "Persetujuan dihubungi: Ya",
+    "PERSYARATAN BERKAS",
+    `Ijazah atau surat kelulusan: ${formData.get("Status ijazah atau surat kelulusan")}`,
+    `KTP orang tua/wali: ${formData.get("Status KTP orang tua/wali")}`,
+    "Status lampiran: Tidak ada dokumen yang dilampirkan melalui formulir ini.",
+    "",
+    "CATATAN TAMBAHAN",
+    formData.get("Catatan untuk panitia") || "Tidak ada.",
+    "",
+    `Persetujuan untuk dihubungi: ${formData.get("Persetujuan dihubungi")}`,
   ].join("\n");
   const mailto = new URL("mailto:admin@daarulazmi.ponpes.id");
-  mailto.searchParams.set("subject", "Permintaan akun PPDB 2027/2028");
+  mailto.searchParams.set(
+    "subject",
+    `Permintaan akun PPDB 2027/2028 - ${formData.get("Nama calon santri")}`,
+  );
   mailto.searchParams.set("body", emailBody);
 
   formStatus.textContent = "Aplikasi email sedang dibuka. Permintaan belum terkirim sampai Anda menekan Kirim di aplikasi email.";

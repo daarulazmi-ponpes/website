@@ -106,6 +106,10 @@
               <input id="student-name" name="Nama calon santri" autocomplete="name" maxlength="100" required>
             </div>
             <div class="field">
+              <label for="guardian-name">Nama orang tua/wali <span aria-hidden="true">*</span></label>
+              <input id="guardian-name" name="Nama orang tua/wali" autocomplete="family-name" maxlength="100" required>
+            </div>
+            <div class="field">
               <label for="account-email">Email untuk akun PPDB <span aria-hidden="true">*</span></label>
               <input id="account-email" name="Email untuk akun" type="email" autocomplete="email" maxlength="254" required>
             </div>
@@ -118,6 +122,32 @@
                 <label for="education-level">Jenjang yang diminati <span aria-hidden="true">*</span></label>
                 <input id="education-level" name="Jenjang yang diminati" maxlength="60" placeholder="Contoh: SMP atau MA" required>
               </div>
+            </div>
+            <fieldset class="document-status">
+              <legend>Status persyaratan berkas</legend>
+              <p>Pilih status setiap berkas. Formulir ini hanya mencatat status dan tidak mengunggah atau melampirkan dokumen.</p>
+              <div class="field">
+                <label for="diploma-status">Ijazah atau surat kelulusan <span aria-hidden="true">*</span></label>
+                <select id="diploma-status" name="Status ijazah atau surat kelulusan" required>
+                  <option value="">Pilih status</option>
+                  <option>Sudah siap</option>
+                  <option>Dalam proses</option>
+                  <option>Belum tersedia</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="guardian-id-status">KTP orang tua/wali <span aria-hidden="true">*</span></label>
+                <select id="guardian-id-status" name="Status KTP orang tua/wali" required>
+                  <option value="">Pilih status</option>
+                  <option>Sudah siap</option>
+                  <option>Dalam proses</option>
+                  <option>Belum tersedia</option>
+                </select>
+              </div>
+            </fieldset>
+            <div class="field">
+              <label for="applicant-note">Catatan untuk panitia <span class="optional-label">(opsional)</span></label>
+              <textarea id="applicant-note" name="Catatan untuk panitia" rows="3" maxlength="500" placeholder="Tuliskan pertanyaan atau informasi tambahan yang perlu diketahui panitia."></textarea>
             </div>
             <label class="consent">
               <input type="checkbox" name="Persetujuan dihubungi" value="Ya" required>
@@ -134,14 +164,15 @@
         <div class="wrap">
           <div class="section-heading">
             <p class="eyebrow">Setelah mengajukan</p>
-            <h2>Alur pendaftaran</h2>
+            <h2>Alur Pendaftaran — Mudah dan Cepat</h2>
           </div>
           <ol class="steps">
-            <li><span>01</span><div><h3>Kirim permintaan akun</h3><p>Periksa email yang disiapkan dan kirimkan kepada admin PPDB.</p></div></li>
-            <li><span>02</span><div><h3>Tunggu konfirmasi panitia</h3><p>Panitia menghubungi Anda melalui email atau WhatsApp orang tua/wali.</p></div></li>
-            <li><span>03</span><div><h3>Lanjutkan pendaftaran</h3><p>Ikuti petunjuk panitia untuk mendapatkan akses akun dan melengkapi berkas.</p></div></li>
+            <li><span>01</span><div><h3>Buat Akun</h3><p>Isi formulir pendaftaran akun dengan data diri yang valid.</p></div></li>
+            <li><span>02</span><div><h3>Lengkapi Data</h3><p>Lengkapi biodata santri dan orang tua secara detail.</p></div></li>
+            <li><span>03</span><div><h3>Upload Berkas</h3><p>Unggah dokumen persyaratan yang dibutuhkan.</p></div></li>
+            <li><span>04</span><div><h3>Verifikasi</h3><p>Tunggu proses verifikasi dan pengumuman hasil seleksi.</p></div></li>
           </ol>
-          <p class="steps-note">Perlu bantuan sekarang? <a href="https://wa.me/6288801005284">Hubungi panitia melalui WhatsApp <span aria-hidden="true">↗</span></a>.</p>
+          <p class="steps-note">Jika masih mengalami kesulitan, <a href="https://wa.me/6288801005284">hubungi WhatsApp PPDB di 0888-0100-5284 <span aria-hidden="true">↗</span></a>.</p>
         </div>
       </section>
     </main>
