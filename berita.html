@@ -7,6 +7,20 @@ title: Berita & Artikel
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Berita dan artikel terbaru dari Pondok Pesantren Daarul Azmi.">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.title | escape }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    <meta property="og:title" content="{{ page.title | escape }} | {{ site.title | escape }}">
+    <meta property="og:description" content="Berita dan artikel terbaru dari Pondok Pesantren Daarul Azmi.">
+    <meta property="og:image" content="{{ site.og_image | absolute_url }}">
+    <meta property="og:image:secure_url" content="{{ site.og_image | absolute_url }}">
+    <meta property="og:image:alt" content="Penerimaan santri baru Pondok Pesantren Daarul Azmi tahun ajaran 2027–2028">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title | escape }} | {{ site.title | escape }}">
+    <meta name="twitter:description" content="Berita dan artikel terbaru dari Pondok Pesantren Daarul Azmi.">
+    <meta name="twitter:image" content="{{ site.og_image | absolute_url }}">
     <title>{{ page.title }} | Pondok Pesantren Daarul Azmi</title>
     <link rel="icon" href="{{ '/assets/icons/logoDA.png' | relative_url }}" type="image/png">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
