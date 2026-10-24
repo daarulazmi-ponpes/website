@@ -1,3 +1,8 @@
+url: "https://daarulazmi.ponpes.id"
+title: "Pondok Pesantren Daarul Azmi"
+description: "Pondok Pesantren Daarul Azmi memadukan pendidikan Islam, tahfidz Al-Qur'an, bahasa internasional, dan teknologi digital."
+og_image: "/assets/images/og-whatsapp-2027-2028.jpg"
+
 collections:
   blog:
     output: true
