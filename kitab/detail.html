@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Kitab | Daarul Azmi</title>
+    <meta
+      name="description"
+      content="Halaman detail kitab klasik Pondok Pesantren Daarul Azmi. Lihat deskripsi kitab dan link download yang aman dan legal."
+    />
+    <style>
+      :root {
+        --navy: #123c62;
+        --navy-deep: #0d2b48;
+        --navy-soft: #1a4f7f;
+        --gold: #d9ac55;
+        --gold-soft: #f3dc9a;
+        --paper: #f6f1e7;
+        --paper-2: #efe7db;
+        --white: #ffffff;
+        --ink: #1f2d3d;
+        --muted: #5d7282;
+        --line: #e8dfd0;
+        --shadow: 0 18px 38px rgba(18, 60, 98, 0.08);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #faf8f4 0%, #f2efe8 100%);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      button { font: inherit; }
+
+      .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+      .topbar {
+        background: linear-gradient(135deg, var(--navy), var(--navy-deep));
+        color: white;
+        padding: 18px 0;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        box-shadow: 0 8px 22px rgba(13, 43, 72, 0.12);
+      }
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        color: white;
+        font-weight: 800;
+        font-size: 22px;
+        line-height: 1.1;
+      }
+      .brand small {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.9;
+      }
+      .header-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .header-links a {
+        color: white;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .page {
+        padding: 42px 0 80px;
+      }
+      .detail-box {
+        background: rgba(255,255,255,0.88);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .detail-grid {
+        display: grid;
+        grid-template-columns: 340px 1fr;
+      }
+      .detail-cover-wrap {
+        background: linear-gradient(180deg, #edf3f8 0%, #e5e3dc 100%);
+      }
+      .detail-cover {
+        width: 100%;
+        height: 100%;
+        min-height: 420px;
+        object-fit: cover;
+        display: block;
+      }
+      .detail-content {
+        padding: 28px 28px 30px;
+      }
+      .category {
+        color: var(--gold);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 12px 0 8px;
+        font-size: clamp(28px, 3vw, 42px);
+        line-height: 1.12;
+      }
+      .author {
+        margin: 0 0 18px;
+        color: var(--muted);
+        font-size: 15px;
+        font-weight: 700;
+      }
+      .description {
+        margin: 0 0 22px;
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 15px;
+      }
+      .meta-box {
+        background: #fbf9f6;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px 18px;
+        margin-bottom: 22px;
+      }
+      .meta-box h2 {
+        margin: 0 0 12px;
+        color: var(--navy);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .meta-list {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .download-title {
+        margin: 0 0 14px;
+        color: var(--navy);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+      .download-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .download-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 16px;
+        border-radius: 10px;
+        background: var(--navy);
+        color: white;
+        font-size: 12px;
+        font-weight: 800;
+        border: 1px solid var(--navy);
+      }
+      .download-btn.alt {
+        background: var(--gold);
+        color: #1d2b39;
+        border-color: var(--gold);
+      }
+      .notice {
+        margin-top: 22px;
+        background: #fffaf0;
+        border: 1px solid #f1dfb7;
+        border-radius: 12px;
+        padding: 14px 16px;
+        color: #775a17;
+        line-height: 1.7;
+        font-size: 13px;
+      }
+
+      @media (max-width: 760px) {
+        .detail-grid { grid-template-columns: 1fr; }
+        .detail-cover { min-height: 300px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <div class="brand">
+          Daarul Azmi
+          <small>Koleksi Kitab Klasik</small>
+        </div>
+        <div class="header-links">
+          <a href="./">Katalog</a>
+          <a href="/">Website Utama</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="wrap detail-box">
+        <div class="detail-grid">
+          <div class="detail-cover-wrap">
+            <img id="bookCover" class="detail-cover" src="" alt="" />
+          </div>
+          <div class="detail-content">
+            <div id="bookCategory" class="category"></div>
+            <h1 id="bookTitle"></h1>
+            <p id="bookAuthor" class="author"></p>
+            <p id="bookDescription" class="description"></p>
+
+            <div class="meta-box">
+              <h2>Informasi kitab</h2>
+              <ul class="meta-list">
+                <li id="metaCategory">Kategori: -</li>
+                <li id="metaAuthor">Penulis: -</li>
+              </ul>
+            </div>
+
+            <p class="download-title">Download</p>
+            <div id="downloadList" class="download-list"></div>
+
+            <div class="notice">
+              Tautan di atas menuju file kitab yang tersedia pada penyedia unduhan.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+
+      fetch('./books.json')
+        .then((response) => response.json())
+        .then((data) => {
+          const items = Array.isArray(data) ? data : (data.books || []);
+          const book = items.find((item) => item.slug === slug);
+
+          if (!book) {
+            document.body.innerHTML = `
+              <div style="padding:48px 20px; text-align:center; font-family:Arial,sans-serif; color:#1f2d3d;">
+                <h2>Kitab tidak ditemukan.</h2>
+                <p><a href="./" style="color:#123c62; font-weight:700;">Kembali ke katalog</a></p>
+              </div>
+            `;
+            return;
+          }
+
+          document.title = `${book.title} | Daarul Azmi`;
+          document.getElementById('bookCover').src = book.cover;
+          document.getElementById('bookCover').alt = book.title;
+          document.getElementById('bookCategory').textContent = book.category;
+          document.getElementById('bookTitle').textContent = book.title;
+          const author = document.getElementById('bookAuthor');
+          author.textContent = book.author ? `Penulis: ${book.author}` : '';
+          author.hidden = !book.author;
+          const description = document.getElementById('bookDescription');
+          description.textContent = book.description || '';
+          description.hidden = !book.description;
+          document.getElementById('metaCategory').textContent = `Kategori: ${book.category}`;
+          const metaAuthor = document.getElementById('metaAuthor');
+          metaAuthor.textContent = book.author ? `Penulis: ${book.author}` : '';
+          metaAuthor.hidden = !book.author;
+
+          const downloadList = document.getElementById('downloadList');
+          downloadList.innerHTML = '';
+
+          book.links.forEach((link, index) => {
+            const a = document.createElement('a');
+            a.href = link.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.className = 'download-btn' + (index === 0 ? '' : ' alt');
+            a.textContent = link.label;
+            downloadList.appendChild(a);
+          });
+        })
+        .catch((error) => {
+          console.error('Gagal memuat data kitab:', error);
+          document.body.innerHTML = `
+            <div style="padding:48px 20px; text-align:center; font-family:Arial,sans-serif; color:#1f2d3d;">
+              <h2>Gagal memuat data kitab.</h2>
+              <p>Silakan coba kembali ke <a href="./" style="color:#123c62; font-weight:700;">katalog kitab</a>.</p>
+            </div>
+          `;
+        });
+    </script>
+  </body>
+</html>
