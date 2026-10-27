@@ -186,6 +186,19 @@
         color: #1d2b39;
         border-color: var(--gold);
       }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 11px;
+        border-radius: 8px;
+        color: white;
+        font-size: 10px;
+        font-weight: 800;
+      }
+      .share-whatsapp { background: #168a54; }
+      .share-facebook { background: #1877f2; }
+      .share-x { background: #202124; }
       .notice {
         margin-top: 22px;
         background: #fffaf0;
@@ -248,6 +261,7 @@
       </div>
     </main>
 
+    <script src="./share.js"></script>
     <script>
       const params = new URLSearchParams(window.location.search);
       const slug = params.get('slug');
@@ -296,6 +310,8 @@
             a.textContent = link.label;
             downloadList.appendChild(a);
           });
+
+          downloadList.appendChild(window.createKitabShareLinks(book));
         })
         .catch((error) => {
           console.error('Gagal memuat data kitab:', error);

@@ -2395,6 +2395,38 @@
           "url": "https://archive.org/download/TheQuranenglishTranslation/Quran-Abdel-Haleem-Translation.pdf"
         }
       ]
+    },
+    {
+      "slug": "ensiklopedia-karya-ulama-pesantren-nusantara-jilid-1",
+      "title": "Ensiklopedia Karya Ulama Pesantren Nusantara - Jilid 1 (2021)",
+      "category": "Ulama Nusantara",
+      "cover": "https://archive.org/services/img/ditpontren-ensiklopedia-karya-ulama-pesantren-nusantara-1-2021",
+      "links": [
+        {
+          "label": "Unduh PDF",
+          "url": "https://archive.org/download/ditpontren-ensiklopedia-karya-ulama-pesantren-nusantara-1-2021/DITPONTREN%20-%20Ensiklopedia%20Karya%20Ulama%20Pesantren%20Nusantara%20-%20Jilid%20%23%201%20-%202021.pdf"
+        },
+        {
+          "label": "Lihat di Internet Archive",
+          "url": "https://archive.org/details/ditpontren-ensiklopedia-karya-ulama-pesantren-nusantara-1-2021"
+        }
+      ]
+    },
+    {
+      "slug": "ensiklopedia-karya-ulama-pesantren-nusantara-jilid-2",
+      "title": "Ensiklopedia Karya Ulama Pesantren Nusantara - Jilid 2 (2023)",
+      "category": "Ulama Nusantara",
+      "cover": "https://archive.org/services/img/ditpontren-ensiklopedia-karya-ulama-pesantren-nusantara-2-2023",
+      "links": [
+        {
+          "label": "Unduh PDF",
+          "url": "https://archive.org/download/ditpontren-ensiklopedia-karya-ulama-pesantren-nusantara-2-2023/DITPONTREN%20-%20Ensiklopedia%20Karya%20Ulama%20Pesantren%20Nusantara%20-%20Jilid%20%23%202%20-%202023.pdf"
+        },
+        {
+          "label": "Lihat di Internet Archive",
+          "url": "https://archive.org/details/ditpontren-ensiklopedia-karya-ulama-pesantren-nusantara-2-2023"
+        }
+      ]
     }
   ]
 }

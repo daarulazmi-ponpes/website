@@ -369,6 +369,21 @@
         color: var(--navy);
         border: 1px solid rgba(18,60,98,0.06);
       }
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 10px;
+        border-radius: 8px;
+        color: white;
+        font-size: 10px;
+        font-weight: 800;
+        transition: transform 0.2s ease;
+      }
+      .share-btn:hover { transform: translateY(-1px); }
+      .share-whatsapp { background: #168a54; }
+      .share-facebook { background: #1877f2; }
+      .share-x { background: #202124; }
 
       .empty-state {
         width: 100%;
@@ -439,6 +454,7 @@
       <section id="bookGrid" class="book-grid"></section>
     </main>
 
+    <script src="./share.js"></script>
     <script>
       const bookGrid = document.getElementById('bookGrid');
       const categoryTabs = document.getElementById('categoryTabs');
@@ -526,6 +542,8 @@
             action.textContent = 'Unduh';
             actions.appendChild(action);
           }
+
+          actions.appendChild(window.createKitabShareLinks(book));
 
           body.append(category, heading, actions);
           card.append(cover, body);
