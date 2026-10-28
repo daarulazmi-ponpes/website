@@ -349,6 +349,43 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
 .footer-bottom { border-top-color: #ffffff20; }
 .floating-contact { background: #13a77f; box-shadow: 0 10px 28px #062c2638; }
 .floating-contact:hover { background: #0c8e6b; }
+.quran-promo {
+  position: fixed;
+  z-index: 12;
+  right: 50%;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  width: min(940px, calc(100vw - 32px));
+  transform: translateX(50%);
+  filter: drop-shadow(0 14px 28px rgb(5 29 22 / 28%));
+  animation: quran-promo-enter .45s ease-out both;
+}
+.quran-promo[hidden] { display: none; }
+.quran-promo-link, .quran-promo-link img { display: block; width: 100%; }
+.quran-promo-link img { height: auto; }
+.quran-promo-close {
+  position: absolute;
+  top: 15%;
+  right: 3%;
+  display: grid;
+  width: clamp(30px, 3.8vw, 42px);
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 0;
+  color: transparent;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: none;
+  cursor: pointer;
+  font-size: 0;
+}
+.quran-promo-close:hover { background: transparent; }
+body.quran-promo-active .floating-contact,
+body.quran-promo-active .floating-ppdb { visibility: hidden; }
+@keyframes quran-promo-enter {
+  from { opacity: 0; transform: translate(50%, 16px); }
+  to { opacity: 1; transform: translate(50%, 0); }
+}
 
 @media (max-width: 760px) {
   .nav-wrap { height: 74px; }
@@ -371,6 +408,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .hero-content { width: calc(100% - 36px); }
   .floating-contact { right: 14px; bottom: 14px; }
   .floating-ppdb { right: 14px; bottom: 72px; min-width: 190px; padding: 11px 15px 12px; }
+  .quran-promo { bottom: max(6px, env(safe-area-inset-bottom)); width: calc(100vw - 12px); }
+  .quran-promo-close { top: 14%; right: 3%; width: 30px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .quran-promo { animation: none; }
 }
 
 .hero {
