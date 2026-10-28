@@ -30,7 +30,7 @@ Logo Pondok Pesantren Daarul Azmi ditempatkan pada header dan footer melalui `as
 
 ## Pratinjau dan berbagi
 - Form harta dimulai kosong; nominal contoh hanya muncul sebagai placeholder. Tombol **Kembalikan contoh awal** tetap memuat data simulasi contoh.
-- Gambar `assets/images/kalkulator-faraid-og.png` dipakai sebagai banner dan gambar Open Graph/Twitter berukuran 1200×630.
+- Gambar JPEG terkompresi `assets/images/kalkulator-faraid-og.jpg` dipakai sebagai banner dan gambar Open Graph/Twitter berukuran 1200×630.
 - Tautan **Website Utama** kembali ke halaman utama Daarul Azmi.
 
 ## Pembaruan formulir
