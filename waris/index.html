@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kalkulator faraid edukatif dengan rincian perhitungan dan validasi kasus waris.">
+  <title>Kalkulator Faraid — Waris Islam</title>
+  <link rel="canonical" href="https://daarulazmi.ponpes.id/waris/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pondok Pesantren Daarul Azmi">
+  <meta property="og:title" content="Kalkulator Faraid — Daarul Azmi">
+  <meta property="og:description" content="Simulasi edukatif pembagian waris Islam dengan rincian langkah dan validasi kasus.">
+  <meta property="og:url" content="https://daarulazmi.ponpes.id/waris/">
+  <meta property="og:image" content="https://daarulazmi.ponpes.id/waris/assets/images/kalkulator-faraid-og.png">
+  <meta property="og:image:secure_url" content="https://daarulazmi.ponpes.id/waris/assets/images/kalkulator-faraid-og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kalkulator Faraid, perhitungan waris Islam Pondok Pesantren Daarul Azmi">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kalkulator Faraid — Daarul Azmi">
+  <meta name="twitter:description" content="Simulasi edukatif pembagian waris Islam dengan rincian langkah dan validasi kasus.">
+  <meta name="twitter:image" content="https://daarulazmi.ponpes.id/waris/assets/images/kalkulator-faraid-og.png">
+  <meta name="twitter:image:alt" content="Kalkulator Faraid, perhitungan waris Islam Pondok Pesantren Daarul Azmi">
+  <base href="/waris/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/waris/" aria-label="Kalkulator Faraid beranda">
+      <img class="brand-logo" src="assets/images/logo-daarul-azmi.png" alt="Logo Pondok Pesantren Daarul Azmi">
+      <span><strong>Faraid</strong><small>Kalkulator Waris Islam</small></span>
+    </a>
+    <div class="header-actions">
+      <a class="main-site-link" href="/">Website Utama</a>
+      <span class="header-tag"><span class="status-dot"></span> Mode edukasi</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <aside class="simulation-ticker" role="note" aria-label="Peringatan: Kalkulator ini hanya simulasi edukatif, bukan penetapan hukum. Sebelum dipakai untuk kasus nyata, kaidah mazhab Syafi'i, hijab, 'ashabah, 'aul, radd, Umariyyatain, pembulatan uang, dan pengecualian harus diverifikasi ahli.">
+          <div class="simulation-ticker-track" aria-hidden="true">
+            <span>PERHATIAN · HANYA SIMULASI EDUKATIF, BUKAN PENETAPAN HUKUM. Sebelum dipakai untuk kasus nyata, kaidah mazhab Syafi'i, hijab, 'ashabah, 'aul, radd, Umariyyatain, pembulatan uang, dan pengecualian harus diverifikasi ahli.</span>
+            <span>PERHATIAN · HANYA SIMULASI EDUKATIF, BUKAN PENETAPAN HUKUM. Sebelum dipakai untuk kasus nyata, kaidah mazhab Syafi'i, hijab, 'ashabah, 'aul, radd, Umariyyatain, pembulatan uang, dan pengecualian harus diverifikasi ahli.</span>
+          </div>
+        </aside>
+        <p class="eyebrow">WARIS ISLAM · ILMU FARAID</p>
+        <h1>Pembagian waris,<br><em>jelas dan terperinci.</em></h1>
+        <p class="hero-description">Masukkan harta bersih dan ahli waris yang masih hidup. Pelajari dasar bagian, proses perhitungan, dan hasil simulasi dengan transparan.</p>
+        <div class="hero-notes">
+          <span>✓ Pecahan eksak</span><span>✓ Rincian langkah</span><span>✓ Responsif</span>
+        </div>
+      </div>
+      <div class="hero-symbol logo-hero">
+        <img src="assets/images/kalkulator-faraid-og.png" alt="Kalkulator faraid untuk perhitungan waris Islam Pondok Pesantren Daarul Azmi">
+      </div>
+    </section>
+
+    <div class="disclaimer" role="note">
+      <span class="disclaimer-icon">i</span>
+      <div><strong>Simulasi edukatif, bukan penetapan hukum.</strong>
+      <p>Hasil bergantung pada kelengkapan data keluarga, status kepemilikan harta, utang, wasiat, dan kaidah yang digunakan. Kasus nyata perlu ditinjau ahli faraid/ulama kompeten; untuk konteks hukum Indonesia, periksa pula ketentuan yang relevan dalam KHI.</p></div>
+    </div>
+
+    <div class="workspace">
+      <section class="panel form-panel">
+        <div class="section-heading">
+          <div><p class="step-label">LANGKAH 01</p><h2>Data pewaris</h2></div>
+          <span class="step-number">01</span>
+        </div>
+        <form id="inheritance-form">
+          <div class="field">
+            <label for="deceasedName">Nama pewaris <span class="label-help">Opsional</span></label>
+            <input id="deceasedName" name="deceasedName" type="text" autocomplete="off" maxlength="100" placeholder="Nama orang yang meninggal">
+          </div>
+
+          <label for="estate">Harta waris bersih <span class="label-help">Rupiah (IDR)</span></label>
+          <div class="money-input"><span>Rp</span><input id="estate" name="estate" type="number" min="0" step="1" placeholder="Contoh: 500000000" required></div>
+          <p class="field-hint">Masukkan nilai setelah biaya pengurusan jenazah yang wajar, utang, dan wasiat yang sah diperhitungkan sesuai ketentuan.</p>
+
+          <fieldset>
+            <legend>Jenis kelamin pewaris</legend>
+            <div class="segmented">
+              <label><input type="radio" name="deceasedSex" value="male" checked><span>Laki-laki</span></label>
+              <label><input type="radio" name="deceasedSex" value="female"><span>Perempuan</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field-grid">
+            <div class="field" id="spouse-field">
+              <label id="spouse-label" for="spouseCount">Istri pewaris</label>
+              <select id="spouseCount" name="spouseCount">
+                <option value="0">Tidak ada</option><option value="1" selected>1 orang</option><option value="2">2 orang</option><option value="3">3 orang</option><option value="4">4 orang</option>
+              </select>
+              <small id="spouse-hint">Pasangan dari orang yang meninggal.</small>
+            </div>
+            <div class="field">
+              <label for="sons">Anak laki-laki</label>
+              <small class="field-hint">Jumlah anak pewaris</small>
+              <select id="sons" name="sons">
+                <option>0</option><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="daughters">Anak perempuan</label>
+              <small class="field-hint">Jumlah anak pewaris</small>
+              <select id="daughters" name="daughters">
+                <option>0</option><option>1</option><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+              </select>
+            </div>
+          </div>
+
+          <fieldset>
+            <legend>Orang tua pewaris</legend>
+            <div class="check-grid">
+              <label class="check-card"><input type="checkbox" id="fatherAlive"><span class="custom-check"></span><span><strong>Ayah masih hidup</strong><small>Ayah kandung pewaris</small></span></label>
+              <label class="check-card"><input type="checkbox" id="motherAlive" checked><span class="custom-check"></span><span><strong>Ibu masih hidup</strong><small>Ibu kandung pewaris</small></span></label>
+            </div>
+          </fieldset>
+
+          <details class="advanced">
+            <summary>Ahli waris lain & pemeriksaan lanjutan</summary>
+            <p class="field-hint">Versi awal ini belum menghitung semua kelompok ahli waris. Tandai bila ada salah satu kelompok berikut agar hasil ditandai perlu pemeriksaan manual.</p>
+            <div class="field-grid">
+              <label class="check-card compact"><input type="checkbox" id="otherDescendants"><span class="custom-check"></span><span><strong>Cucu / keturunan lain</strong><small>Termasuk keturunan melalui anak yang wafat</small></span></label>
+              <label class="check-card compact"><input type="checkbox" id="grandparents"><span class="custom-check"></span><span><strong>Kakek / nenek</strong><small>Selain ayah dan ibu</small></span></label>
+              <label class="check-card compact"><input type="checkbox" id="siblings"><span class="custom-check"></span><span><strong>Saudara pewaris</strong><small>Kandung, seayah, atau seibu</small></span></label>
+              <label class="check-card compact"><input type="checkbox" id="extendedKin"><span class="custom-check"></span><span><strong>Kerabat lainnya</strong><small>Misalnya paman atau ahli waris lain</small></span></label>
+            </div>
+            <label class="check-card compact warning-check"><input type="checkbox" id="specialCase"><span class="custom-check"></span><span><strong>Ada kondisi khusus</strong><small>Misalnya beda agama, pembunuhan, kehamilan, anak angkat, harta bersama, wasiat wajibah, atau sengketa status.</small></span></label>
+          </details>
+
+          <div id="form-error" class="form-error" role="alert" hidden></div>
+          <button class="primary-button" type="submit"><span>Hitung pembagian</span><span aria-hidden="true">↗</span></button>
+          <button class="secondary-button" type="button" id="reset-button">Kembalikan contoh awal</button>
+        </form>
+      </section>
+
+      <section class="results-column" id="results-column" aria-live="polite" hidden>
+        <div class="panel result-panel">
+          <div class="section-heading">
+            <div><p class="step-label">HASIL SIMULASI</p><h2>Ringkasan pembagian</h2></div>
+            <span id="result-status" class="result-status">Contoh awal</span>
+          </div>
+          <div class="estate-summary">
+            <span>Total harta bersih</span>
+            <strong id="estate-total">Rp500.000.000</strong>
+            <div class="estate-line"><span id="heir-count">5 penerima bagian</span><span id="allocated-percent">100% teralokasi</span></div>
+            <div class="progress-track"><div id="allocation-bar" class="progress-fill" style="width:100%"></div></div>
+          </div>
+          <div id="result-alert" class="result-alert" hidden></div>
+          <div id="result-list" class="result-list"></div>
+          <div class="result-footer"><span class="footer-check">✓</span><span id="reconciliation">Total pembagian sama dengan harta bersih.</span></div>
+        </div>
+
+        <div class="panel explanation-panel">
+          <div class="section-heading">
+            <div><p class="step-label">TRANSPARANSI</p><h2>Bagaimana dihitung?</h2></div>
+          </div>
+          <ol id="calculation-steps" class="calculation-steps"></ol>
+        </div>
+
+        <div class="panel sources-panel">
+          <p class="step-label">LANDASAN & CATATAN</p>
+          <h2>Dalil dan ruang lingkup</h2>
+          <div class="source-item"><span class="source-number">11</span><div><strong>QS. An-Nisa: 11</strong><p>Ketentuan bagian anak dan kedua orang tua.</p><a href="https://quran.nu.or.id/an-nisa/11" target="_blank" rel="noopener noreferrer">Baca ayat di Quran NU Online ↗</a></div></div>
+          <div class="source-item"><span class="source-number">12</span><div><strong>QS. An-Nisa: 12</strong><p>Ketentuan bagian suami, istri, dan saudara seibu.</p><a href="https://quran.nu.or.id/an-nisa/12" target="_blank" rel="noopener noreferrer">Baca ayat di Quran NU Online ↗</a></div></div>
+          <div class="source-item"><span class="source-number">176</span><div><strong>QS. An-Nisa: 176</strong><p>Ketentuan saudara dalam kasus kalalah.</p><a href="https://quran.nu.or.id/an-nisa/176" target="_blank" rel="noopener noreferrer">Baca ayat di Quran NU Online ↗</a></div></div>
+          <div class="source-item"><span class="source-number">HR</span><div><strong>Hadis tentang pembagian waris</strong><p>“Berikanlah bagian-bagian warisan kepada yang berhak; sisanya untuk kerabat laki-laki terdekat.” (HR. Al-Bukhari no. 6732 dan Muslim no. 1615)</p><a href="https://www.hadits.id/hadits/bukhari/6732" target="_blank" rel="noopener noreferrer">Baca terjemahan hadis ↗</a> · <a href="https://www.hadits.id/hadits/muslim/1615" target="_blank" rel="noopener noreferrer">Riwayat Muslim ↗</a></div></div>
+          <p class="method-note">Kalkulator ini hanya simulasi edukatif untuk kasus terbatas dengan pasangan, anak, ayah, dan ibu; bukan penetapan pembagian waris. Mesin belum mencakup semua kondisi hijab, 'ashabah, 'aul, radd, Umariyyatain, kakek bersama saudara, dzawil arham, ahli waris pengganti, kehamilan, beda agama, pembunuhan, harta bersama, wasiat wajibah, serta pengecualian lain. Hasil, kaidah mazhab Syafi'i, dan pembulatan nominal wajib diverifikasi ahli faraid/ulama kompeten sebelum dipakai pada kasus nyata.</p>
+        </div>
+      </section>
+    </div>
+    <footer class="site-footer"><span class="footer-brand"><img src="assets/images/logo-daarul-azmi.png" alt=""> FARAID · KALKULATOR EDUKATIF</span><span>Periksa data dan kaidah sebelum mengambil keputusan.</span></footer>
+  </main>
+  <script src="assets/js/faraid-engine.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

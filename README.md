@@ -6,6 +6,8 @@ The mirror is static: search and contact forms still rely on the official websit
 
 The PPDB account-request page is available at `/ppdb/`. This GitHub Pages site has no server-side form or email service configured, so submitting the form opens the visitor's email application with a message addressed to **admin@daarulazmi.ponpes.id**; the visitor must send it there. The email includes the submitted student and parent/guardian biodata, registration details, document-readiness statuses, and any optional note. The static form cannot upload or attach documents; applicants should follow the committee's instructions after contact. No account is created automatically, and the page never confirms that an email was delivered. A reliable automated workflow requires a trusted server-side endpoint and credentials configured outside this static repository.
 
+The educational Faraid calculator is available at `/waris/`; its files and usage notes are in `waris/`.
+
 The primary GitHub Pages site is configured to publish `main` at **daarulazmi.ponpes.id**, using the root `CNAME`; do not replace it to host PPDB. The redesigned PPDB site is published independently from [`daarulazmi-ponpes/daarulazmi-ponpes.github.io`](https://github.com/daarulazmi-ponpes/daarulazmi-ponpes.github.io), and its default GitHub Pages URL is live. GitHub currently rejects binding **ppdb.daarulazmi.ponpes.id** to that site because the custom domain is already claimed by another Pages site. The remaining host-side step is to release that existing claim (or verify domain ownership and transfer the claim) and then bind the subdomain to the dedicated repository. Its DNS already points to `daarulazmi-ponpes.github.io`; do not change DNS or the primary site's `CNAME`.
 
 ## Preview locally
@@ -19,6 +21,7 @@ python3 -m http.server 8000
 Then visit <http://localhost:8000>.
 
 The mirrored pages are available under <http://localhost:8000/source-site/>.
+The Faraid calculator is available at <http://localhost:8000/waris/>.
 
 ## Publish with GitHub Pages
 
