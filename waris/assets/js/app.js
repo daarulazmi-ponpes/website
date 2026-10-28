@@ -6,10 +6,28 @@
   const sexInputs = [...document.querySelectorAll('input[name="deceasedSex"]')];
   const defaultValues = {estate:"500000000",sex:"male",spouseCount:"1",sons:"2",daughters:"1",fatherAlive:false,motherAlive:true};
   const formatMoney = n => "Rp"+BigInt(n).toLocaleString("id-ID");
+  const groupedDigits = value => value.replace(/\D/g,"").replace(/\B(?=(\d{3})+(?!\d))/g,".");
+  const caretAfterDigits = (value, digitCount) => {
+    if (digitCount === 0) return 0;
+    let digitsSeen = 0;
+    for (let index = 0; index < value.length; index++) {
+      if (/\d/.test(value[index]) && ++digitsSeen === digitCount) return index + 1;
+    }
+    return value.length;
+  };
+  function formatEstateField(){
+    const field = $("estate");
+    const start = field.selectionStart;
+    const end = field.selectionEnd;
+    const digitsBeforeStart = field.value.slice(0,start).replace(/\D/g,"").length;
+    const digitsBeforeEnd = field.value.slice(0,end).replace(/\D/g,"").length;
+    field.value = groupedDigits(field.value);
+    field.setSelectionRange(caretAfterDigits(field.value,digitsBeforeStart),caretAfterDigits(field.value,digitsBeforeEnd));
+  }
   const readInput = () => {
     const sex = document.querySelector('input[name="deceasedSex"]:checked').value;
     return {
-      estate:Number($("estate").value),
+      estate:Number($("estate").value.replace(/\D/g,"")),
       deceasedSex:sex,
       spouseCount:Number($("spouseCount").value),
       sons:Number($("sons").value),
@@ -102,9 +120,10 @@
     render(result);
   }
   sexInputs.forEach(input=>input.addEventListener("change",updateSpouseField));
+  $("estate").addEventListener("input",formatEstateField);
   form.addEventListener("submit",e=>{e.preventDefault();$("results-column").hidden=false;calculate();});
   $("reset-button").addEventListener("click",()=>{
-    $("estate").value=defaultValues.estate;
+    $("estate").value=groupedDigits(defaultValues.estate);
     document.querySelector('input[name="deceasedSex"][value="male"]').checked=true;
     $("spouseCount").value="1";$("sons").value="2";$("daughters").value="1";
     $("fatherAlive").checked=false;$("motherAlive").checked=true;
