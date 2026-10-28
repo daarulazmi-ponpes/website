@@ -14,16 +14,21 @@ The homepage links to the Qur’an Digital reader at <https://quran.daarulazmi.p
 
 ## Preview locally
 
-Run a local static file server from the repository root:
+The homepage and several top-level pages use Jekyll front matter and Liquid
+templates. A plain static file server does not process them and will show
+template tags as text, making dynamic news and gallery sections appear broken.
+Install Jekyll, then run it from the repository root:
 
 ```sh
-python3 -m http.server 8000
+gem install jekyll
+jekyll serve
 ```
 
-Then visit <http://localhost:8000>.
+Then visit <http://localhost:4000>. GitHub Pages also processes these templates
+when publishing the `main` branch.
 
-The mirrored pages are available under <http://localhost:8000/source-site/>.
-The Faraid calculator is available at <http://localhost:8000/waris/>.
+The mirrored pages are available under <http://localhost:4000/source-site/>.
+The Faraid calculator is available at <http://localhost:4000/waris/>.
 
 ## Publish with GitHub Pages
 

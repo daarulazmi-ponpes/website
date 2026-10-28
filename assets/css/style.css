@@ -138,9 +138,13 @@ button { font: inherit; }
 
 .video-section { padding-block: 96px 106px; }
 .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.video-card { min-height: 220px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 8px; padding: 24px; color: white; background: linear-gradient(145deg, #17466d, #0a243e); }
+.video-card { position: relative; isolation: isolate; overflow: hidden; min-height: 220px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 8px; padding: 24px; color: white; background: linear-gradient(145deg, #17466d, #0a243e); }
 .video-card:nth-child(2) { background: linear-gradient(145deg, #537184, #17324c); }
 .video-card:nth-child(3) { background: linear-gradient(145deg, #94733c, #49391f); }
+.video-card::before { position: absolute; z-index: 0; inset: 0; background: linear-gradient(180deg, rgb(8 29 45 / 8%) 5%, rgb(8 29 45 / 82%) 100%); content: ""; }
+.video-thumbnail { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.video-card:hover .video-thumbnail { transform: scale(1.05); }
+.video-card > :not(.video-thumbnail) { position: relative; z-index: 1; }
 .play-button { display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: 14px; color: var(--navy); background: #e8c66f; border-radius: 50%; font-size: 13px; }
 .video-card time { color: #efd68e; }
 .video-card strong { font-family: var(--serif); font-size: 20px; line-height: 1.3; }
