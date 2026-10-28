@@ -10,7 +10,7 @@ The educational Faraid calculator is available at `/waris/`; its files and usage
 
 The primary GitHub Pages site is configured to publish `main` at **daarulazmi.ponpes.id**, using the root `CNAME`; do not replace it to host PPDB. The redesigned PPDB site is published independently from [`daarulazmi-ponpes/daarulazmi-ponpes.github.io`](https://github.com/daarulazmi-ponpes/daarulazmi-ponpes.github.io), and its default GitHub Pages URL is live. GitHub currently rejects binding **ppdb.daarulazmi.ponpes.id** to that site because the custom domain is already claimed by another Pages site. The remaining host-side step is to release that existing claim (or verify domain ownership and transfer the claim) and then bind the subdomain to the dedicated repository. Its DNS already points to `daarulazmi-ponpes.github.io`; do not change DNS or the primary site's `CNAME`.
 
-The homepage links to the Qur’an Digital reader at <https://quran.daarulazmi.ponpes.id/> with a dismissible floating banner. Homepage sharing previews use the supplied 1200×630 Qur’an Digital artwork. The root `manifest.webmanifest` and Daarul Azmi app icons let visitors add the main site to an Android home screen or install it from a supported desktop browser over HTTPS.
+The homepage links to the Qur’an Digital reader at <https://quran.daarulazmi.ponpes.id/> with a dismissible floating banner. The main site's social preview uses the PPDB artwork at `assets/images/og-whatsapp-2027-2028.jpg`; the Qur’an Digital artwork and preview are used only on the Quran subdomain. The root `manifest.webmanifest` and Daarul Azmi app icons let visitors add the main site to an Android home screen or install it from a supported desktop browser over HTTPS.
 
 ## Preview locally
 
