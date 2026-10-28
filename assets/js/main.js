@@ -62,10 +62,8 @@ const quranPromo = document.querySelector("#quran-promo");
 const quranPromoClose = document.querySelector(".quran-promo-close");
 
 if (quranPromo && quranPromoClose) {
-  document.body.classList.add("quran-promo-active");
   quranPromoClose.addEventListener("click", () => {
     quranPromo.hidden = true;
-    document.body.classList.remove("quran-promo-active");
   });
 }
 
