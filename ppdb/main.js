@@ -43,7 +43,7 @@ registrationForm.addEventListener("submit", (event) => {
     "",
     `Persetujuan untuk dihubungi: ${formData.get("Persetujuan dihubungi")}`,
   ].join("\n");
-  const mailto = new URL("mailto:admin@daarulazmi.ponpes.id");
+  const mailto = new URL("mailto:pp.daarulazmi@gmail.com");
   mailto.searchParams.set(
     "subject",
     `Permintaan akun PPDB 2027/2028 - ${formData.get("Nama calon santri")}`,
