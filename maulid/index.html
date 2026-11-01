@@ -276,11 +276,12 @@
       button.disabled=true;
       if(supabaseClient){
         status.textContent="Mengirim doa…";
-        const {error}=await supabaseClient.from("maulid_doa").insert({nama:name,pesan:text});
+        const {error}=await supabaseClient.from("maulid_doa").insert({nama:name,pesan:text,approved:true});
         button.disabled=false;
         if(error){status.textContent="Doa belum terkirim. Periksa koneksi dan pengaturan database, lalu coba lagi.";return;}
         document.getElementById("wishText").value="";
-        status.textContent="Doa terkirim. Setelah disetujui panitia, doa akan tampil di halaman ini.";
+        status.textContent="Terima kasih, doa Anda berhasil dibagikan dan langsung tampil.";
+        await renderWishes();
         return;
       }
       const items=JSON.parse(localStorage.getItem("daarulAzmiWishes")||"[]");
@@ -295,11 +296,11 @@
       const list=document.getElementById("wishes");
       const status=document.getElementById("wishStatus");
       if(supabaseClient){
-        const {data,error}=await supabaseClient.from("maulid_doa").select("nama,pesan,created_at").eq("approved",true).order("created_at",{ascending:false}).limit(30);
+        const {data,error}=await supabaseClient.from("maulid_doa").select("nama,pesan,created_at").order("created_at",{ascending:false}).limit(30);
         if(error){list.innerHTML="";status.textContent="Buku doa belum bisa dimuat. Panitia perlu memeriksa konfigurasi Supabase.";return;}
         list.innerHTML=(data||[]).map(x=>`<div class="note"><strong>${escapeHTML(x.nama||"Tamu")}</strong> · ${new Date(x.created_at).toLocaleDateString("id-ID")}<br>${escapeHTML(x.pesan||"")}</div>`).join("");
-        if(!data?.length)list.innerHTML='<div class="note">Belum ada doa yang disetujui. Jadilah yang pertama menitipkan doa.</div>';
-        status.textContent="Doa yang tampil telah disetujui oleh panitia.";
+        if(!data?.length)list.innerHTML='<div class="note">Belum ada doa yang tersimpan. Jadilah yang pertama menitipkan doa.</div>';
+        status.textContent="Doa yang dikirim tampil untuk semua jamaah.";
         return;
       }
       const items=JSON.parse(localStorage.getItem("daarulAzmiWishes")||"[]");

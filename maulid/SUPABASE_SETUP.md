@@ -1,8 +1,13 @@
-# Menyiapkan buku doa Supabase
+# Supabase untuk buku doa Maulid
 
-1. Buka atau buat proyek di https://supabase.com/dashboard/projects.
-2. Di SQL Editor, jalankan `supabase-schema.sql` satu kali. Doa baru masuk sebagai `approved = false`; panitia menyetujuinya di Table Editor dengan mengubah `approved` menjadi `true`.
-3. Di Project Settings → API Keys, salin Project URL dan publishable key (atau key lama `anon`). Masukkan keduanya ke `assets/supabase-config.js`. Jangan masukkan `service_role`/secret key ke HTML atau file publik.
-4. Deploy perubahan. Formulir akan menyimpan doa ke tabel `maulid_doa` dan menampilkan doa yang sudah disetujui. Tanpa konfigurasi, halaman mempertahankan penyimpanan lokal di browser.
+## Atur database
 
-Pencarian proyek lokal tidak menemukan URL/key Supabase. Jika akun terlupa, coba masuk ke dashboard Supabase dengan Google/GitHub atau email yang biasa dipakai; cari surel undangan/proyek dari Supabase.
+1. Buka SQL Editor proyek Supabase dan jalankan `supabase-schema.sql`. Skrip ini mengatur agar doa baru langsung tampil, termasuk doa lama yang sebelumnya masih menunggu.
+2. Pengunjung boleh membaca dan mengirim doa. Pengunjung umum tidak mendapat izin mengubah atau menghapus doa melalui API.
+3. Untuk menghapus doa yang tidak berkenan, panitia dengan akses proyek dapat membuka **Table Editor → maulid_doa**, memilih baris, lalu menghapusnya. Berikan akses proyek hanya kepada panitia tepercaya.
+
+## Konfigurasi halaman
+
+`assets/supabase-config.js` berisi Project URL dan publishable key. Publishable key memang dipakai di browser dan dibatasi oleh RLS. Jangan masukkan `service_role` atau secret key ke file publik.
+
+Halaman mengirim ke tabel `maulid_doa`, lalu memuat ulang daftar doa terbaru. Jika Supabase tidak terkonfigurasi, penyimpanan lokal browser digunakan sebagai fallback.
