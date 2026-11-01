@@ -167,7 +167,8 @@
       <div class="guestbook">
         <input id="wishName" placeholder="Nama Anda" style="width:100%;padding:13px;border:1px solid #d9dfd1;border-radius:10px;margin:15px 0 9px">
         <textarea id="wishText" placeholder="Tuliskan doa dan ucapan..."></textarea>
-        <button class="btn-green" onclick="saveWish()">Simpan doa di perangkat ini</button>
+        <button class="btn-green" id="saveWishButton" type="button" onclick="saveWish()">Kirim doa</button>
+        <p class="lead" id="wishStatus" aria-live="polite" style="font-size:12px;margin:12px auto"></p>
         <div id="wishes"></div>
       </div>
       <p class="lead" style="font-size:11px">Catatan: buku doa versi ini tersimpan di browser perangkat pengunjung. Untuk menampilkan ucapan yang sama kepada semua tamu, hubungkan ke database/backend.</p>
@@ -195,7 +196,14 @@
     <a href="#doa"><span>♡</span>Doa</a>
   </nav>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="assets/supabase-config.js"></script>
   <script>
+    const supabaseConfig = window.MAULID_SUPABASE || {};
+    const supabaseClient = window.supabase && supabaseConfig.projectUrl && supabaseConfig.publishableKey
+      ? window.supabase.createClient(supabaseConfig.projectUrl, supabaseConfig.publishableKey)
+      : null;
+
     // ================= PENGATURAN PANITIA =================
     // Isi nomor WhatsApp panitia dengan format internasional tanpa tanda +.
     // Contoh: 6281234567890
@@ -258,21 +266,47 @@
       else {navigator.clipboard?.writeText(message);alert("Nomor WhatsApp panitia belum diatur. Pesan konfirmasi disalin jika browser mengizinkan.");}
     });
 
-    function saveWish(){
+    async function saveWish(){
       const name=document.getElementById("wishName").value.trim()||"Tamu";
       const text=document.getElementById("wishText").value.trim();
-      if(!text){alert("Silakan tuliskan doa terlebih dahulu.");return;}
+      const status=document.getElementById("wishStatus");
+      const button=document.getElementById("saveWishButton");
+      if(!text){status.textContent="Silakan tuliskan doa terlebih dahulu.";return;}
+      if(name.length>80||text.length>500){status.textContent="Nama maksimal 80 karakter dan doa maksimal 500 karakter.";return;}
+      button.disabled=true;
+      if(supabaseClient){
+        status.textContent="Mengirim doa…";
+        const {error}=await supabaseClient.from("maulid_doa").insert({nama:name,pesan:text});
+        button.disabled=false;
+        if(error){status.textContent="Doa belum terkirim. Periksa koneksi dan pengaturan database, lalu coba lagi.";return;}
+        document.getElementById("wishText").value="";
+        status.textContent="Doa terkirim. Setelah disetujui panitia, doa akan tampil di halaman ini.";
+        return;
+      }
       const items=JSON.parse(localStorage.getItem("daarulAzmiWishes")||"[]");
       items.unshift({name,text,date:new Date().toLocaleDateString("id-ID")});
       localStorage.setItem("daarulAzmiWishes",JSON.stringify(items.slice(0,30)));
       document.getElementById("wishText").value="";
+      button.disabled=false;
+      status.textContent="Supabase belum dikonfigurasi; doa ini hanya tersimpan di browser ini.";
       renderWishes();
     }
-    function renderWishes(){
+    async function renderWishes(){
+      const list=document.getElementById("wishes");
+      const status=document.getElementById("wishStatus");
+      if(supabaseClient){
+        const {data,error}=await supabaseClient.from("maulid_doa").select("nama,pesan,created_at").eq("approved",true).order("created_at",{ascending:false}).limit(30);
+        if(error){list.innerHTML="";status.textContent="Buku doa belum bisa dimuat. Panitia perlu memeriksa konfigurasi Supabase.";return;}
+        list.innerHTML=(data||[]).map(x=>`<div class="note"><strong>${escapeHTML(x.nama||"Tamu")}</strong> · ${new Date(x.created_at).toLocaleDateString("id-ID")}<br>${escapeHTML(x.pesan||"")}</div>`).join("");
+        if(!data?.length)list.innerHTML='<div class="note">Belum ada doa yang disetujui. Jadilah yang pertama menitipkan doa.</div>';
+        status.textContent="Doa yang tampil telah disetujui oleh panitia.";
+        return;
+      }
       const items=JSON.parse(localStorage.getItem("daarulAzmiWishes")||"[]");
-      document.getElementById("wishes").innerHTML=items.map(x=>`<div class="note"><strong>${escapeHTML(x.name)}</strong> · ${x.date}<br>${escapeHTML(x.text)}</div>`).join("");
+      list.innerHTML=items.map(x=>`<div class="note"><strong>${escapeHTML(x.name||"Tamu")}</strong> · ${escapeHTML(x.date||"")}<br>${escapeHTML(x.text||"")}</div>`).join("");
+      status.textContent="Supabase belum dikonfigurasi; doa hanya terlihat di browser pengirim.";
     }
-    function escapeHTML(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+    function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
     renderWishes();
   </script>
 </body>
